@@ -46,6 +46,7 @@ main{
     transition: margin-left .5s;
     overflow:hidden;
     text-align: center;
+
     height: 850px;
   
 }
@@ -236,4 +237,57 @@ footer{
 }
 section{
     display: flex;
+}
+/* Diseño de el main del ejercicio 1 */
+#ejercicio-container{
+    text-align: center;
+    display: flex;
+}
+.result-container{
+  
+    background-color: #f09cde;
+    height: 200px;
+    width: 750px;
+    text-align: center;
+    background-color: #f09cde;
+    border-bottom: #818181;
+    padding: 15px 15px;
+    margin: 15px 15px;
+    
+
+}
+.element-container-label{
+    font-size: 30px;
+    text-align: right;
+    color: white;
+    margin: 10px 10px;
+    padding: 10px 10px;
+}
+.element-container-text{
+    text-align: justify;
+    background-color: white;
+    font-size: 20px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+.element-container-button{
+    background-color: #5c085a;
+    color: white;
+    font-size: 40px;
+    border-radius: 100px;
+}
+
+.enunciado{
+    background-color: #5c085a;
+    color: white;
+    font-size: 20px;
+    text-align: justify;
+    height: 200px;
+    width: 750px;
+    padding: 15px 15px;
+    margin: 15px 15px;
+}
+#mensaje{
+    color: white;
+    font-size: 30px;
 }
