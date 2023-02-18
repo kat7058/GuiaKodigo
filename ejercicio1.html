@@ -38,14 +38,20 @@
     </div>
 
     <div id="ejercicio-container">
-        <h3 class="enunciado"> Crear una función que en base a la edad que ingreso el usuario devolver un mensaje si la 
+        <h3 class="enunciado"> 
+            <p><strong>Enunciado</strong></p>
+            Crear una función que en base a la edad que ingreso el usuario devolver un mensaje si la 
             persona es mayor de edad o no. Utilizar para la condición el operador ternario.</h3>
     
             <div class="result-container">
+                <h2>Resultados</h2>
                 <label class="element-container-label" for="">Ingresar Edad :</label>
                 <input  class="element-container-text" id="edad" type="text">
                 <button class="element-container-button" onclick="calcularEdad()"> Click</button>
-                <p id="mensaje"></p>
+                <div id="container-result-ejercicios">
+                    <p id="mensaje"></p>
+                </div>
+                
             </div>
         
     
@@ -71,6 +77,12 @@
    
     
   }
+  function ponleFocus(){
+    document.getElementById("edad").focus();
+}
+ponleFocus();
+
+
   </script>
   <footer>
   <div class="social-icons-container">

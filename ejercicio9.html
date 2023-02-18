@@ -4,9 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 9</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div id="sideNavigation" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times:</a>
+        <a href="index.html">Inicio</a>
+        <a href="ejercicio1.html">Ejercicio 1</a>
+        <a href="ejercicio2.html">Ejercicio 2</a>
+        <a href="ejercicio3.html">Ejercicio 3</a>
+        <a href="ejercicio4.html">Ejercicio 4</a>
+        <a href="ejercicio5.html">Ejercicio 5</a>
+        <a href="ejercicio6.html">Ejercicio 6</a>
+        <a href="ejercicio7.html">Ejercicio 7</a>
+        <a href="ejercicio8.html">Ejercicio 8</a>
+        <a href="ejercicio9.html">Ejercicio 9</a>
+        <a href="ejercicio10.html">Ejercicio 10</a>
+    </div>
+    <nav class="topnav">
+        <a href="#" onclick="openNav()">
+        <svg width="30" height="30" id="icoOpen">
+            <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+            <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+            <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+        </svg>
+        </a>
+    </nav>
+   
+   <main >
+    <div id="main">
+        <h1>Ejercicio 9</h1>
+    </div>     
 </body>
+<script>
+    function openNav(){
+   document.getElementById("sideNavigation").style.width="250px";
+   document.getElementById("main").style.marginLeft="250px";
+}
+
+function closeNav(){
+   document.getElementById("sideNavigation").style.width="0";
+   document.getElementById("main").style.marginLeft="0";
+}
+</script>
+<footer>
+ <div class="social-icons-container">
+     <a href="" class="social-icon"></a>
+     <a href="" class="social-icon"></a>
+     <a href="" class="social-icon"></a>
+     <a href="" class="social-icon"></a>
+ </div>
+ <ul>
+     <li class="menu-item">Legal</li>
+     <li class="menu-item">Cookies</li>
+     <li class="menu-item">Privacy</li>
+     <li class="menu-item">Shipping</li>
+     <li class="menu-item">Refounds</li>
+ </ul>
+ <span class="copyright">&copy;2023,Katerin Angel.All rights reserved</span>
+ </footer>
 </html>

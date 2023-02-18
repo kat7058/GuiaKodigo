@@ -35,9 +35,65 @@
    <main>
     <div id="main">
         <h1>Ejercicio 2 </h1>
-        
       
     </div>
+    <div id="ejercicio-container">
+      <h3 class="enunciado">
+        <p><strong>Enunciado</strong></p>
+            Crear una función que determine la nota final de un alumno, la cual depende de lo siguiente: 
+            <p>Examen =20%</p>
+            <p>tareas = 40%</p>
+            <p>asistencia = 10%</p>
+            <p>investigación = 30%</p>
+         Al final deberá mostrar los datos del alumno, nombre, carnet y nota final.
+ 
+      </h3>
+    
+    <div class="result-container">
+        <h2>Resultados</h2>
+        <label class="element-container-label" for="">Ingrese nombre:
+            <input   class="element-container-text" id="nombre" type="text">
+        </label>
+        <br>
+        <label class="element-container-label" for="">Ingrese carnet:
+            <input class="element-container-text" id="carnet" type="text">
+        </label>
+        <br>
+        <label class="element-container-label" for="">Ingrese nota del examen:
+            <input class="element-container-text"  id="examen" type="text" >
+        </label>
+        <br>
+        <label  class="element-container-label" for="">Ingrese nota de las tareas:
+            <input class="element-container-text" id="tareas" type="text">
+        </label>
+        <br>
+        <label class="element-container-label" for="">Ingrese nota de investigacion:
+            <input class="element-container-text" id="investigacion" type="text">
+        </label>
+        <br>
+        <label class="element-container-label" for="">Ingrese asistencia:</label>
+        <br>
+        <label class="element-container-label"> 
+            <input class="element-container-text" type="radio" name="asistencia" value="completa" required>Completa
+        </label>
+        <label class="element-container-label" for="">
+            <input class="element-container-text" type="radio" name="asistencia" value="incompleta">Incompleta
+        </label>
+        <br>
+        <div>
+            <button  class="element-container-button" onclick="calcular()">Calcular</button>
+        <div id="container-result-ejercicios">
+            <p class="mensaje-result"  id="mensaje1"></p>
+            <p  class="mensaje-result" id="mensaje2"></p>
+            <p class="mensaje-result" id="mensaje3"></p>
+            
+        </div>
+
+        </div>
+        
+        
+    </div>
+</div>
 
 </main>  
 </body>
@@ -51,6 +107,38 @@
       document.getElementById("sideNavigation").style.width="0";
       document.getElementById("main").style.marginLeft="0";
   }
+  function calcular(){
+    let nombreAlumno=document.getElementById('nombre').value;
+    let carnet= document.getElementById('carnet').value;
+    let notaExamen=document.getElementById('examen').value;
+    let notaTarea=document.getElementById('tareas').value;
+    let notaInvestigacion=document.getElementById('investigacion').value;
+    let asistenciaEs=document.querySelector('input[name=asistencia]:checked') ||'incompleta';
+    let resultado= 0;
+
+   
+    if(asistenciaEs.value == 'completa'){
+        
+        resultado=(notaExamen*0.2)+(notaTarea*0.4)+(notaInvestigacion*0.3)+ 1;
+            document.getElementById('mensaje1').innerHTML="Nombre:"+ nombreAlumno;
+            document.getElementById('mensaje2').innerHTML="Carnet:"+ carnet;
+            document.getElementById('mensaje3').innerHTML="Nota:" + resultado;
+
+    }else {
+        resultado=(notaExamen*0.2)+(notaTarea*0.4)+(notaInvestigacion*0.3);
+        document.getElementById('mensaje1').innerHTML="Nombre:"+ nombreAlumno;
+            document.getElementById('mensaje2').innerHTML="Carnet:"+ carnet;
+            document.getElementById('mensaje3').innerHTML="Nota:" + resultado;
+    }      
+     
+    }
+   
+    function ponleFocus(){
+    document.getElementById("nombre").focus();
+}
+
+ponleFocus();
+  
   </script>
   <footer>
   <div class="social-icons-container">
