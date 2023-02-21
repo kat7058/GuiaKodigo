@@ -1,3 +1,8 @@
+html{
+    position: relative;
+    min-height: 100%;
+}
+
 .sidenav{
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -47,7 +52,7 @@ main{
     overflow:hidden;
     text-align: center;
 
-    height: 850px;
+    height: 950px;
   
 }
 body {
@@ -145,6 +150,7 @@ footer{
     justify-content: center;
     align-items: center;
     display: flex;  
+    
 }
 .logo{
     height: 88px;
@@ -252,6 +258,7 @@ section{
     padding: 15px 15px;
     margin: 15px 15px;
     
+    
 }
 .element-container-label{
     font-size: 20px;
@@ -304,5 +311,12 @@ h2{
 #container-result-ejercicios{
     background-color: #5c085a;
     border-color: #555;
+}
+#table-categoria{
+    text-align: center;
+    border: 2px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   
 }
 

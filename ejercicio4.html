@@ -32,10 +32,34 @@
         </a>
     </nav>
    
-   <main >
+   <main>
     <div id="main">
         <h1>Ejercicio 4</h1>
-    </div>   
+    </div>  
+    <div id="ejercicio-container">
+        <h3 class="enunciado"> 
+            <p><strong>Enunciado</strong></p>
+            Crear una función que en base a 2 números enteros que ingrese el usuario, calcular cual 
+            número es el mayor y devolverlo. </h3>
+    
+            <div class="result-container">
+                <h2>Resultados</h2>
+                <label class="element-container-label" for="">Ingresar primer numero:
+                    <input type="number" name="" id="primerNumero">
+                </label>
+                <br>
+                <label class="element-container-label">Ingresar segundo numero
+                    <input type="number" name="" id="segundoNumero">
+                </label>
+                
+                <button class="element-container-button" onclick="calcular()"> Click</button>
+                <div id="container-result-ejercicios">
+                    <p id="mensaje-eje4" class="mensaje-result"></p>
+                </div>
+                
+            </div>
+    </div> 
+    </main>
 </body>
 <script>
     function openNav(){
@@ -46,6 +70,16 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+function calcular(){
+    let numero1= Number(document.getElementById('primerNumero').value);
+    let numero2=Number(document.getElementById('segundoNumero').value);
+    
+    if(numero1>numero2){
+        document.getElementById('mensaje-eje4').innerHTML="El numero mayor es "+ numero1;
+    }else{
+        document.getElementById('mensaje-eje4').innerHTML="El numero mayor es " + numero2;
+    }
 }
 </script>
 <footer>

@@ -36,6 +36,70 @@
     <div id="main">
         <h1>Ejercicio 3</h1>
     </div>   
+   
+<div id="ejercicio-container">
+        <h3 class="enunciado">
+            <p><strong>Enunciado</strong></p>
+            <table id="table-categoria">
+                <tr>
+                    <td>Categoria</td>
+                    <td>Aumento</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>15%</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>30%</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <td>D</td>
+                    <td>20%</td>
+                </tr>
+            </table>
+            Calcular el aumento de trabajador tomando en cuenta la tabla de categorías de aumento. 
+Para este ejercicio deberá de asignar las siguientes variables: Nombre, Salario, categoría y 
+aumento. Deberá demostrar en html los datos del empleado y el aumento salarial.
+
+        </h3>
+        <div class="result-container">
+            <h2>Resultados</h2>
+            <label class="element-container-label">Ingrese nombre:
+                <input type="text" class="element-container-text" id="nombre">
+            </label>
+            <br>
+            <label class="element-container-label">Ingrese salario:
+                <input type="number" class="element-container-text" id="salario">
+            </label>
+            <br>
+            <label class="element-container-label">Ingrese categoria:
+                <input list="categoria" class="element-container-text" id="categoria-input">
+                <datalist id="categoria">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </datalist>
+            </label>
+            <div>
+                <button onclick="calcular()" class="element-container-button">Click</button>
+                <div id="container-result-ejercicios">
+                    <p id="mensaje-1-eje3" class="mensaje-result"></p>
+                    <p id="mensaje-2-eje3" class="mensaje-result"></p>
+                    <p id="mensaje-3-eje3" class="mensaje-result"></p>
+                    <p id="mensaje-4-eje3" class="mensaje-result"></p>
+                    <p id="mensaje-5-eje3" class="mensaje-result"></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
 </body>
 <script>
        function openNav(){
@@ -47,6 +111,57 @@
       document.getElementById("sideNavigation").style.width="0";
       document.getElementById("main").style.marginLeft="0";
   }
+  function calcular()
+   {
+    let nombre=document.getElementById('nombre').value;
+    let salario=Number(document.getElementById('salario').value);
+    let categoriaInput=document.getElementById('categoria-input').value;
+    let salarioFinal = 0;
+    let aumento = 0;
+
+    if (categoriaInput == 'A'){
+
+            aumento=(salario*0.15);
+            console.log(aumento);
+            console.log(salario);
+            salarioFinal= aumento + salario;
+            console.log(salarioFinal)
+           
+            
+          
+    }
+    else if(categoriaInput =='B'){
+        aumento=(salario*0.30);
+            salarioFinal= aumento + salario;
+            
+
+    }
+    else if(categoriaInput =='C'){
+        aumento=(salario*0.1);
+            salarioFinal=  aumento + salario;
+            
+
+    }
+    else if(categoriaInput =='D'){
+        aumento=(salario*0.2);
+            salarioFinal= aumento + salario;
+           
+    }
+    else{
+        document.getElementById('mensaje-1-eje3').innerHTML="No hay aumento";
+    }
+
+   
+           document.getElementById('mensaje-1-eje3').innerHTML="Nombre:" + nombre;
+            document.getElementById('mensaje-2-eje3').innerHTML="Salario normal:" + salario;
+            document.getElementById('mensaje-3-eje3').innerHTML="Categoria:" + categoriaInput;
+            document.getElementById('mensaje-4-eje3').innerHTML="El aumento es:"+ aumento.toFixed(2) ;
+            document.getElementById('mensaje-5-eje3').innerHTML="El salario total es de:" + salarioFinal.toFixed(2);  
+  
+
+    }
+ 
+
 </script>
 <footer>
     <div class="social-icons-container">
