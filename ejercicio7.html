@@ -35,7 +35,42 @@
    <main >
     <div id="main">
         <h1>Ejercicio 7</h1>
-    </div>    
+    </div>   
+    <div id="ejercicio-container">
+        <h3 class="enunciado">
+            <p><strong>Enunciado</strong></p>
+            Realizar programa para una web, en el cual el usuario introduce 2 notas y su valor 
+ponderado (como cuando un examen vale un 30% y otro examen el 70%). Pulsando el 
+botón “Calcula”, la web muestra como resultado la nota media ponderada.
+        </h3>
+        <div class="result-container">
+            <h2>Resultados</h2>
+            <label class="element-container-label">Ingresar la nota del examen:
+                <input  class="element-container-text" type="text" name="" id="examen1">
+            </label>
+            <br>
+            <label class="element-container-label">Ingrese el porcentaje del primer examen en %:
+                <input class="element-container-text" type="text" name="" id="porcentexam1">
+            </label>
+            <br>
+            <label class="element-container-label">Ingresar la nota del  Segundo examen:
+                <input class="element-container-text" type="text" name="" id="examen2">
+            </label>
+            <br>
+            <label class="element-container-label">Ingrese el porcentaje del segundo examen en %:
+                <input class="element-container-text" type="text" name="" id="porcentexam2">
+            </label>
+            <div>
+                <button class="element-container-button" onclick="calcular7()">Calcular</button>
+                <div id="container-result-ejercicios">
+                    <p id="mensaje-eje7" class="mensaje-result"></p>
+                    <p id="mensaje-2-eje" class="mensaje-result"></p>
+                </div>
+            </div>
+            
+        </div>
+    </div> 
+    </main>
 </body>
 <script>
     function openNav(){
@@ -46,6 +81,30 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+function calcular7(){
+    let exam1= Number(document.getElementById('examen1').value);
+    let porExam1=Number(document.getElementById('porcentexam1').value);
+    let exam2=Number(document.getElementById('examen2').value);
+    let porExamn2=Number(document.getElementById('porcentexam2').value)
+    let calcularporcen;
+    let result = 0;
+
+    if (exam1>=0 && exam1<=10 && exam2>=0 && exam2<=10){
+        if((porExam1+porExamn2)== 100){
+         result = (exam1*(porExam1/100))+(exam2*(porExamn2/100));
+            document.getElementById('mensaje-eje7').innerHTML="La nota media ponderada es:" + result;
+
+        }
+        else{
+            document.getElementById('mensaje-eje7').innerHTML="Verifique los datos ingresados."
+        }
+    }
+    else{
+        document.getElementById('mensaje-eje7').innerHTML="Verifique los datos ingresados."
+    }
+
+
 }
 </script>
 <footer>

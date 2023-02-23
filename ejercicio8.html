@@ -35,7 +35,33 @@
    <main >
     <div id="main">
         <h1>Ejercicio 8</h1>
-    </div>     
+    </div>   
+    <div id="ejercicio-container"> 
+        <h3 class="enunciado">
+            <p><strong>Enunciado</strong></p>
+            Crear programa donde se introduce una temperatura en Celsius y salga el resultado en 
+Fahrenheit, una vez teniendo la temperatura en Fahrenheit deberá devolver lo siguiente:
+
+<p> Si ºF está entre 14 y 32, sale la frase “Temperatura baja”</p>
+<p> Si ºF está entre 32 y 68, sale la frase “Temperatura adecuada”</p>
+<p> Si ºF está entre 68 y 96, sale la frase “Temperatura alta”</p>
+<p> Si no está entre ningún caso anterior la frase “Temperatura desconocida”</p>
+        </h3>
+        <div class="result-container">
+            <label class="element-container-label">Ingrese temperatura en Celcius:
+                <input  class="element-container-text " type="text" id="temperatura">
+            </label>
+            <div>
+                <button class="element-container-button" onclick="Calcular8()">Calcular</button>
+                <div id="container-result-ejercicios">
+                    <p id="mensaje-eje8" class="mensaje-result"></p>
+                    <p id="mensaje-2-eje8" class="mensaje-result"></p>
+                </div>
+                
+            </div>
+        </div>
+    </div>  
+    </main>
 </body>
 <script>
     function openNav(){
@@ -46,6 +72,27 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+ function Calcular8(){
+
+    let temperaturaC= Number(document.getElementById('temperatura').value);
+    let temparaturaF = Number((temperaturaC*1.8)+32);
+
+    if (temparaturaF >= 14 && temparaturaF<32){
+        document.getElementById('mensaje-eje8').innerHTML="Fahrenhei°:" +temparaturaF;
+        document.getElementById('mensaje-2-eje8').innerHTML="Temperatura baja";
+    } else if(temparaturaF>=32 && temparaturaF<68){
+        document.getElementById('mensaje-eje8').innerHTML="Fahrenhei°:" +temparaturaF;
+        document.getElementById('mensaje-2-eje8').innerHTML="Temperatura adecuada";
+    }
+    else if(temparaturaF >= 68 && temparaturaF<=96){
+        document.getElementById('mensaje-eje8').innerHTML="Fahrenhei°:" +temparaturaF;
+        document.getElementById('mensaje-2-eje8').innerHTML="Temperatura alta";
+    }else{
+        document.getElementById('mensaje-2-eje8').innerHTML="Temperatura desconocida";
+    }
+
+    
 }
 </script>
 <footer>

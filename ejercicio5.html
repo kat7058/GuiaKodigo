@@ -36,6 +36,36 @@
     <div id="main">
         <h1>Ejercicio 5</h1>
     </div>    
+    <div id="ejercicio-container">
+        <h3 class="enunciado">
+            <p><strong>Enunciado</strong></p>
+            Realizar una función para una tienda de coches en donde se deberá calcular: Si el coche a 
+la venta es un FORD FIESTA, aplicar un 5% de descuento en la compra. Si el coche a la 
+venta es un FORD FOCUS, el descuento será del 10% y si es un FORD ESCAPE el descuento 
+será del 20%. Mostrar en html el coche seleccionado y el descuento que se aplicara en base 
+a lo que selecciono el usuario.
+        </h3>
+        <div class="result-container">
+            <h2>Relsultados</h2>
+            <label class="element-container-label">Tipo de coche:
+                <input list="tipo-coche" class="element-container-text" name="" id="tipo-coche-input">
+                <datalist id="tipo-coche">
+                    <option value="FORD FIESTA">FORD FIESTA</option>
+                    <option value="FORD FOCUS">FORD FOCUS</option>
+                    <option value="FORD ESCAPE">FORD ESCAPE</option>
+                </datalist>
+            </label>
+            <div>
+                <button class="element-container-button" onclick="calcular5()">Click</button>
+                <div id="container-result-ejercicios">
+                    <p id="mensaje-eje5" class="mensaje-result"></p>
+                    <p id="mensaje2-eje5" class="mensaje-result"></p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    </main>
 </body>
 <script>
     function openNav(){
@@ -46,6 +76,20 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+function calcular5(){
+    let tipoCoche=document.getElementById('tipo-coche-input').value;
+
+    if (tipoCoche == 'FORD FIESTA'){
+        document.getElementById('mensaje-eje5').innerHTML="El tipo de coche es:" + tipoCoche;
+        document.getElementById('mensaje2-eje5').innerHTML="Con un descuento del 5%";
+    }else if(tipoCoche == 'FORD FOCUS'){
+        document.getElementById('mensaje-eje5').innerHTML="El tipo de coche es:" + tipoCoche;
+        document.getElementById('mensaje2-eje5').innerHTML="Con un descuento del 10%"; 
+    }else if(tipoCoche == 'FORD ESCAPE'){
+        document.getElementById('mensaje-eje5').innerHTML="El tipo de coche es:" + tipoCoche;
+        document.getElementById('mensaje2-eje5').innerHTML="Con un descuento del 20%"; 
+    }
 }
 </script>
 <footer>
