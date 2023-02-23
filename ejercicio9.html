@@ -35,7 +35,29 @@
    <main >
     <div id="main">
         <h1>Ejercicio 9</h1>
-    </div>     
+    </div> 
+    <div id="ejercicio-container">
+        <h3 class="enunciado">
+            <p><strong>Enunciado</strong></p>
+            Se realiza la carga de 10 valores enteros por teclado. Se desea conocer: 
+            <p> La cantidad de valores negativos ingresados.  </p>
+            <p> La cantidad de valores positivos ingresados.   </p>
+            <p>  La cantidad de múltiplos de 15. </p>
+            <p>El valor acumulado de los números ingresados que son pares.</p>
+        </h3>
+        <div class="result-container">
+           <div>
+            <button class="element-container-button" onclick="procesar()">Procesar</button>
+         <div id="container-result-ejercicios">
+            <p id="negativos" class="mensaje-result"></p>
+            <p id="positivos" class="mensaje-result"></p>
+            <p id="multiplos"c class="mensaje-result"></p>
+            <p id="acumuladoPares" class="mensaje-result"></p>
+         </div>
+         
+           </div>
+        </div>
+    </div>    
 </body>
 <script>
     function openNav(){
@@ -46,6 +68,38 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+function procesar(){
+   let datos=[];
+   let negativos=0;
+   let positivos=0;
+   let multiples=0;
+   let pares=0;
+    for(let i=0;i<10;i++){ 
+        let numero=parseInt(prompt('Introducir valor numero'+ i+':'));
+     datos.push(numero);
+     
+
+     if(numero<0){
+        negativos++;
+     }else if(numero>0){
+        positivos++;
+     }
+     if((numero%15)== 0){
+        multiples++;
+     }
+     if((numero%2)== 0){
+        pares +=numero;
+
+     }
+     
+    }
+
+    document.getElementById('negativos').innerHTML= "Total de numeros negativos ingresados:" + negativos;
+    document.getElementById('positivos').innerHTML=" Total de numeros positivos ingresados: " + positivos;
+    document.getElementById('multiplos').innerHTML="Total de numeros multiplos de 15 ingresados:"+ multiples;
+    document.getElementById('acumuladoPares').innerHTML="Suma de numeros pares="+ pares;
+
 }
 </script>
 <footer>
