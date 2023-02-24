@@ -52,7 +52,7 @@ main{
     overflow:hidden;
     text-align: center;
 
-    height: 950px;
+    height: 1200px;
   
 }
 body {
@@ -250,8 +250,8 @@ section{
     display: flex;
 }
 .result-container{
-    height:675px;
-    width: 750px;
+    height:1000px;
+    width: 800px;
     text-align: left;
     background-color: #f09cde;
     border-bottom: #818181;
@@ -291,8 +291,8 @@ section{
     color: white;
     font-size: 20px;
     text-align: justify;
-    height: 675px;
-    width: 750px;
+    height: 1000px;
+    width: 800px;
     padding: 15px 15px;
     margin: 15px 15px;
 }

@@ -35,7 +35,66 @@
    <main >
     <div id="main">
         <h1>Ejercicio 10</h1>
-    </div>     
+    </div> 
+    <div id="ejercicio-container">
+        <h3 class="enunciado">
+            <p><strong>Enunciado</strong></p>
+            Se cuenta con la siguiente información: 
+            <p>Las edades de 5 estudiantes del turno mañana. </p>
+            <p> Las edades de 6 estudiantes del turno tarde. </p>
+            <p> Las edades de 11 estudiantes del turno noche.</p>
+            <p>Nota: Las edades de cada estudiante se deberán ingresar por la web.</p>
+            <p>Lo que queremos devolver:</p>
+            <p> Obtener el promedio de las edades de cada turno (tres promedios).</p>
+            <p> Imprimir dichos promedios (promedio de cada turno).</p>
+            <p> Mostrar por pantalla un mensaje que indique cuál de los tres turnos tiene un 
+                promedio de edades mayor</p>
+        </h3>
+        <div class="result-container">
+            <div>
+                <label class="element-container-label">Ingresar edades del turno de la mañana:
+                    <br>
+                    <input type="text" id="mañana1" class="element-container-text">
+                    <input type="text" id="mañana2" class="element-container-text">
+                    <input type="text" id="mañana3" class="element-container-text">
+                    <input type="text" id="mañana4" class="element-container-text">
+                    <input type="text" id="mañana5" class="element-container-text">
+                </label>
+               <br>
+                <label class="element-container-label">Ingresar edades del turno de la Tarde:
+                    <br>
+                    <input type="text" id="tarde1" class="element-container-text">
+                    <input type="text" id="tarde2" class="element-container-text">
+                    <input type="text" id="tarde3" class="element-container-text">
+                    <input type="text" id="tarde4" class="element-container-text">
+                    <input type="text" id="tarde5" class="element-container-text">
+                    <input type="text" id="tarde6" class="element-container-text">
+                </label>
+                <br>
+                <label class="element-container-label">Ingresar edades del turno de la Noche:
+                    <br>
+                    <input type="text" id="noche1" class="element-container-text">
+                    <input type="text" id="noche2" class="element-container-text">
+                    <input type="text" id="noche3" class="element-container-text">
+                    <input type="text" id="noche4" class="element-container-text">
+                    <input type="text" id="noche5" class="element-container-text">
+                    <input type="text" id="noche6" class="element-container-text">
+                    <input type="text" id="noche7" class="element-container-text">
+                    <input type="text" id="noche8" class="element-container-text">
+                    <input type="text" id="noche9" class="element-container-text">
+                    <input type="text" id="noche10" class="element-container-text">
+                    <input type="text" id="noche11" class="element-container-text">
+                </label>
+
+                <button class="element-container-button" onclick="imprimirDatos()">Imprimir datos</button>
+                <div id="container-result-ejercicios">
+                    <p class="mensaje-result" id="promediosEdades"></p>
+                    <p class="mensaje-result" id="promedioMayor"></p>
+                </div>
+            </div>
+        </div>
+    </div>   
+    </main> 
 </body>
 <script>
     function openNav(){
@@ -46,6 +105,67 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+
+function imprimirDatos(){
+    let turnoMañana = [
+    Number(document.getElementById('mañana1').value),
+    Number(document.getElementById('mañana2').value),
+    Number(document.getElementById('mañana3').value),
+    Number(document.getElementById('mañana4').value),
+    Number(document.getElementById('mañana5').value)
+  ];
+  let turnoTarde = [
+    Number(document.getElementById('tarde1').value),
+    Number(document.getElementById('tarde2').value),
+    Number(document.getElementById('tarde3').value),
+    Number(document.getElementById('tarde4').value),
+    Number(document.getElementById('tarde5').value),
+    Number(document.getElementById('tarde6').value)
+  ];
+  const turnoNoche = [
+    Number(document.getElementById('noche1').value),
+    Number(document.getElementById('noche2').value),
+    Number(document.getElementById('noche3').value),
+    Number(document.getElementById('noche4').value),
+    Number(document.getElementById('noche5').value),
+    Number(document.getElementById('noche6').value),
+    Number(document.getElementById('noche7').value),
+    Number(document.getElementById('noche8').value),
+    Number(document.getElementById('noche9').value),
+    Number(document.getElementById('noche10').value),
+    Number(document.getElementById('noche11').value)
+  ];
+  let promedioMañana = turnoPromedio(turnoMañana);
+  let promedioTarde = turnoPromedio(turnoTarde);
+  let promedioNoche = turnoPromedio(turnoNoche);
+
+  let promedioMayor=0;
+  if(promedioMañana>promedioTarde){
+    promedioMayor=promedioMañana;
+
+  }else if (promedioTarde>promedioNoche){
+    promedioMayor=promedioTarde;
+
+  }else if(promedioNoche>promedioMañana){
+    promedioMayor=promedioNoche
+
+  }
+
+
+
+  document.getElementById('promediosEdades').innerHTML="Promedios  Mañana: "+ promedioMañana + "Tarde: "+ promedioTarde + "Noche: "+ promedioNoche;
+  document.getElementById('promedioMayor').textContent = "El promedio mayor es : " + promedioMayor;
+   
+
+}
+function turnoPromedio(edades){
+     
+  let sumaTurno = edades.reduce((suma, edad) => suma + edad, 0);
+  let promedioTurno = sumaTurno / edades.length;
+  
+  
+  return promedioTurno.toFixed(2);
 }
 </script>
 <footer>

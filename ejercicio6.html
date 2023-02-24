@@ -35,7 +35,40 @@
    <main >
     <div id="main">
         <h1>Ejercicio 6</h1>
-    </div>    
+    </div>
+    <div id="ejercicio-container">
+            <h3 class="enunciado">
+                <p><strong>Enunciado</strong></p>
+                Crear una Función para calcular el descuento en viajes turísticos tomando en cuenta lo 
+siguiente: 
+Si el usuario introduce como origen la ciudad de Palma y como destino La costa del Sol, el 
+descuento será de 5%, si el destino es Panchimalco el descuento será del 10% y si el destino 
+es Puerto el Triunfo el descuento será del 15%.
+            </h3>
+            <div class="result-container">
+                <label class="element-container-label">Lugar de origen:
+                    <input class="element-container-text" list="origen-v" id="origen">
+                    <datalist id="origen-v">
+                        <option value="La palma">La palma</option>
+                    </datalist>
+                </label>
+                <br>
+                <label class="element-container-label">Ingrese lugar de destino:
+                    <input class="element-container-text" list="destino-v" id="destino">
+                    <datalist id="destino-v">
+                        <option value="Costa del sol">Costa del sol</option>
+                        <option value="Panchimalco">Panchimalco</option>
+                        <option value="Puerto el triunfo">Puerto el triunfo</option>
+                    </datalist>
+                </label>
+                <div>
+                    <button class="element-container-button" onclick="procesar()">Procesar</button>
+                    <p id="descuento" class="mensaje-result"></p>
+                </div> 
+            </div>
+        </div>
+    </div> 
+    </main>   
 </body>
 <script>
     function openNav(){
@@ -46,6 +79,25 @@
 function closeNav(){
    document.getElementById("sideNavigation").style.width="0";
    document.getElementById("main").style.marginLeft="0";
+}
+function procesar(){
+    let lugarO=document.getElementById('origen').value;
+    let lugarD=document.getElementById('destino').value;
+
+    if(lugarO == 'La palma'){
+        if(lugarD == 'Costa del sol'){
+            document.getElementById('descuento').innerHTML="El descuento es del 5%";
+        }else if (lugarD == 'Panchimalco'){
+            document.getElementById('descuento').innerHTML="El descuento es del 10%";
+        }else if (lugarD == 'Puerto el triunfo'){
+            document.getElementById('descuento').innerHTML="El descuento es del 15%";
+        }
+    
+
+    }else{
+        document.getElementById('descuento').innerHTML="Ingrese destino";
+    }
+
 }
 </script>
 <footer>
